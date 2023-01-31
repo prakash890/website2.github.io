@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="contact.css">
+	<title>Contact</title>
+</head>
+<body>
+		<div class="hero-header">
+		<div class="wrapper">
+			<header>
+				<div class="logo">
+					<i class="fa-solid fa-p"></i>
+					<div class="logo-text">Prakash Khadka</div>
+					</div>
+				<nav>
+					<div class="togglebtn">
+						<span></span>
+						<span></span>
+						<span></span>
+			        </div>
+			        <ul class="navlinks">
+			        <li><a href="index.html">Home</a></li>
+			        <li><a href="#">Portfolio</a></li>
+			        <li><a href="#">Resume</a></li>
+			        <li><a href="#">Blog</a></li>
+			        <li><a href="contact.html">Contact</a></li>	
+			        </ul>
+			    </nav>
+				
+			</header>
+	<div class="container">
+		<form onsubmit="sendEmail(); reset(); return false;">
+			<h3>Contact Me</h3>
+			<input type="text" id="name" placeholder="Your Name" required>
+			<input type="email" id="email" placeholder="Email id" required>
+			<input type="text" id="phone" placeholder="Phone no." required>
+			<textarea id="message" rows="4" placeholder="How can i help you ?"></textarea>
+			<button type="submit">Send</button>
+		</form>
+		
+	</div>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendEmail(){
+			Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "pk4949274@gmail.com",
+    Password : "BD098CDB23E61E313CAB7352FB6EEC238F0C",
+    To : 'pk4949274@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "This is the s",
+    Body : "Name: " + document.getElementById("name").value
+    + "<br> Email: " + document.getElementById("email").value
+    + "<br> Phone no: " + document.getElementById("phone").value
+    + "<br> Message: " + document.getElementById("message").value
+}).then(
+  message => alert("Message Sent Successfully")
+);
+		  
+		}
+	</script>
+
+
+</body>
+</html>
