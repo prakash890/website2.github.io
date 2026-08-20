@@ -1,83 +1,1216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Prakash-Developers</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Century English Medium School - Unit 3: The Cell Interactive Learning</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        school: {
+                            gold: '#d97706',
+                            navy: '#1e3a8a',
+                            maroon: '#800000'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Outfit', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                        handwriting: ['Caveat', 'cursive'],
+                        mono: ['Space Grotesk', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #certificate-print-area, #certificate-print-area * {
+                visibility: visible;
+            }
+            #certificate-print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+        .organelle-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .cert-border {
+            border: 12px double #1e3a8a;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
+    <!-- Navigation / Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- School Brand & Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-900 to-indigo-950 rounded-xl flex items-center justify-center p-1.5 shadow-md border border-amber-400/40">
+                    <svg viewBox="0 0 200 200" class="w-full h-full">
+                        <polygon points="100,20 30,85 170,85" fill="#d97706" opacity="0.95"/>
+                        <polygon points="100,180 30,115 170,115" fill="#2563eb" opacity="0.95"/>
+                        <rect x="65" y="65" width="70" height="70" rx="4" fill="#ffffff" stroke="#1e293b" stroke-width="4"/>
+                        <line x1="75" y1="80" x2="125" y2="80" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="2,2"/>
+                        <line x1="75" y1="95" x2="125" y2="95" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="2,2"/>
+                        <line x1="75" y1="110" x2="125" y2="110" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="2,2"/>
+                        <path d="M125 70 L140 55 C142 53, 145 53, 147 55 L150 58 C152 60, 152 63, 150 65 L135 80 Z" fill="#eab308"/>
+                        <polygon points="125,70 122,78 130,75" fill="#334155"/>
+                        <circle cx="100" cy="100" r="3" fill="#dc2626"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-extrabold text-blue-950 tracking-tight">Century English Medium School</h1>
+                    <p class="text-xs sm:text-sm font-medium text-slate-500 flex items-center gap-2">
+                        <span><i class="fa-solid fa-flask-vial text-emerald-600"></i> Grade 8 Science & Technology</span>
+                        <span class="text-slate-300">•</span>
+                        <span><i class="fa-solid fa-user-tie text-blue-600"></i> Subject Teacher: <strong>Prakash Khadka</strong></span>
+                    </p>
+                </div>
+            </div>
 
-	<div class="hero-header">
-		<div class="wrapper">
-			<header>
-				<div class="logo">
-					<i class="fa-solid fa-p"></i>
-					<div class="logo-text">Prakash Khadka</div>
-					</div>
-				<nav>
-					<div class="togglebtn">
-						<span></span>
-						<span></span>
-						<span></span>
-			        </div>
-			        <ul class="navlinks">
-			        <li><a href="index.html">Home</a></li>
-			        <li><a href="#">Services</a></li>
-			        <li><a href="#">Gallery</a></li>
-			        <li><a href="#">Century</a></li>
-			        <li><a href="contact.html">Contact</a></li>	
-			        </ul>
-			    </nav>
-				
-			</header>
-			<div class="container">
-				<div class="hero-pic">
-					<img src="images/k.png" alt="profile pic">
-				</div>
-				<div class="hero-text">
-					<h5>Hi I'm <span class="input">Web Developer</span></h5>
-					<h1>Prakash Khadka</h1>
-					<p>A web developer with one years of experience. I specialize in c, c++, java, html, css, java script, php, Phototshop etc. I have some skills on office pakage(ms access, ms excell, ms powerpoint, ms word). Except these I can also work on Page Maker 7.0., Corel draw, indesign, photoshop. As a graphics designer and Digital Marketing as Content Writing. I have experience in building portfolio website and news feeding website. I am passionate about creating user-friendly and efficient websites. It's great to meet you!"</p>
-					<div class="btn-group">
-						<a href="https://drive.google.com/file/d/1jCjMwvNIKI93CzdOMU1BHv3px1SG4J1a/view?usp=share_link" class="btn active">Download CV</a>
-						<a href="contact.html" class="btn">Hire Me!</a>
-					</div>
-					<div class="social">
-						<a href="https://www.facebook.com/iamblacklinux"><i class="fa-brands fa-facebook"></i></a>
-						<a href="https://www.tiktok.com/@eagle_guy69"><i class="fa-brands fa-tiktok"></i></a>
-						<a href="https://www.instagram.com/prakash.k00/"><i class="fa-brands fa-instagram"></i></a>
-						<a href="https://www.youtube.com/channel/UCLfFJvUOieICDa-oL-JMdBQ"><i class="fa-brands fa-youtube"></i></a>
-						<a href="https://twitter.com/prakash_khadka0"><i class="fa-brands fa-twitter"></i></a>
-					</div>
+            <!-- Main Navigation Tabs -->
+            <nav class="flex bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                <button onclick="switchTab('study')" id="tab-study" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 bg-white text-blue-900 shadow-sm">
+                    <i class="fa-solid fa-book-open text-blue-600"></i>
+                    <span>Lesson Study & Simulation</span>
+                </button>
+                <button onclick="switchTab('eval')" id="tab-eval" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                    <i class="fa-solid fa-pen-to-square text-amber-600"></i>
+                    <span>Evaluation Test (30 Marks)</span>
+                </button>
+                <button onclick="switchTab('cert')" id="tab-cert" class="px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900 relative">
+                    <i class="fa-solid fa-award text-purple-600"></i>
+                    <span>Certificate</span>
+                    <span id="cert-lock-icon" class="text-xs text-amber-500 ml-1"><i class="fa-solid fa-lock"></i></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Main Content Body -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	<!----- typed js for typing text effect -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-<script>
-  var togglebtn = document.querySelector(".togglebtn");
-  var nav = document.querySelector(".navlinks");
+        <!-- TAB 1: LESSON STUDY & INTERACTIVE SIMULATION -->
+        <section id="section-study" class="space-y-8">
+            <!-- Unit Hero Banner -->
+            <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider rounded-full border border-amber-400/30 mb-3">
+                        Unit 3: Living Beings & Their Structures
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white mb-2">3.1 The Cell: Basic Unit of Life</h2>
+                    <p class="text-blue-100 text-sm sm:text-base leading-relaxed">
+                        Discover the fascinating microscopic world! Discovered by <strong>Robert Hooke in 1665 AD</strong>, cells are the fundamental structural and functional building blocks of all living organisms.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-4 text-xs sm:text-sm text-blue-200">
+                        <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/10"><i class="fa-solid fa-microscope mr-1 text-teal-300"></i> Interactive Organelle Explorer</span>
+                        <span class="bg-white/10 px-3 py-1.5 rounded-lg border border-white/10"><i class="fa-solid fa-vial mr-1 text-amber-300"></i> Onion Peel Experiment Lab</span>
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 opacity-10 flex items-center justify-center p-8 pointer-events-none">
+                    <i class="fa-solid fa-dna text-[180px] text-white"></i>
+                </div>
+            </div>
 
-  togglebtn.addEventListener("click", function () {
-    this.classList.toggle("click");
-    nav.classList.toggle("open");
-  });
+            <!-- Cell Type Comparison Interactive Simulator -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-100 mb-6 gap-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900"><i class="fa-solid fa-shapes text-blue-600 mr-2"></i>Cell Categorization Simulator</h3>
+                        <p class="text-xs text-slate-500">Toggle between cell types to explore structural differences as highlighted in Grade 8 curriculum.</p>
+                    </div>
+                    <div class="flex bg-slate-100 p-1 rounded-xl">
+                        <button onclick="toggleCellView('plant')" id="btn-cell-plant" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow-sm">Plant Cell</button>
+                        <button onclick="toggleCellView('animal')" id="btn-cell-animal" class="px-3 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900">Animal Cell</button>
+                        <button onclick="toggleCellView('prokaryote')" id="btn-cell-pro" class="px-3 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900">Prokaryotic Cell</button>
+                    </div>
+                </div>
 
-  var typed = new Typed(".input", {
-    strings: ["Web Developer", "UX Designer", "Graphic Designer"],
-    typeSpeed: 70,
-    backSpeed: 55,
-    loop: true
-  });
-</script>
+                <!-- Interactive Visual Canvas/Diagram Area -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <!-- Interactive Visual SVG -->
+                    <div class="lg:col-span-7 bg-slate-950 rounded-xl p-4 flex flex-col items-center justify-center min-h-[340px] relative border border-slate-800">
+                        <div id="cell-diagram-svg" class="w-full max-w-md h-72 flex items-center justify-center">
+                            <!-- Dynamic SVG loaded via JavaScript -->
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 text-center"><i class="fa-solid fa-hand-pointer text-amber-400 mr-1"></i> Click any organelle on the diagram or list to highlight its functions!</p>
+                    </div>
+
+                    <!-- Organelle Information Spotlight -->
+                    <div class="lg:col-span-5 bg-slate-50 rounded-xl p-5 border border-slate-200 min-h-[340px] flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span id="spotlight-tag" class="text-[10px] font-extrabold uppercase px-2 py-0.5 bg-blue-100 text-blue-800 rounded">Organelle Spotlight</span>
+                                <span id="spotlight-location" class="text-xs text-slate-500 font-medium">Plant & Animal Cells</span>
+                            </div>
+                            <h4 id="spotlight-title" class="text-xl font-black text-slate-900 mb-2">Nucleus</h4>
+                            <p id="spotlight-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                Double-membrane bound organelle containing genetic materials (DNA/RNA). Known as the control center of the cell.
+                            </p>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 space-y-1.5 text-xs">
+                                <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-gears text-amber-500"></i> Key Functions & Facts:
+                                </div>
+                                <ul id="spotlight-facts" class="list-disc list-inside text-slate-600 space-y-1">
+                                    <li>Controls all vital cellular activities.</li>
+                                    <li>Contains nucleolus for ribosome production.</li>
+                                    <li>Stores and transmits hereditary information.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Quick Organelle Selection Buttons -->
+                        <div class="mt-4 pt-3 border-t border-slate-200">
+                            <span class="text-[11px] font-bold text-slate-400 block mb-2 uppercase">Quick Select Organelles:</span>
+                            <div class="flex flex-wrap gap-1.5" id="organelle-pills">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Organelles Detailed Grid -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-cubes text-emerald-600"></i>
+                    Detailed Cell Organelles Summary (Grade 8 Textbook)
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Cell Wall -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Cell Wall</h4>
+                        <p class="text-xs text-slate-500 mb-2">Thick, rigid protective outer layer in plants, fungi, algae, and bacteria. Made of cellulose (plants) or chitin (fungi).</p>
+                        <span class="inline-block text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Absent in Animal Cells</span>
+                    </div>
+
+                    <!-- Cell Membrane -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Cell Membrane (Plasma Membrane)</h4>
+                        <p class="text-xs text-slate-500 mb-2">Semi-permeable lipid-protein bilayer. Regulates the entry and exit of selective materials into and out of the cell.</p>
+                        <span class="inline-block text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Present in ALL Cells</span>
+                    </div>
+
+                    <!-- Mitochondria -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Mitochondria</h4>
+                        <p class="text-xs text-slate-500 mb-2">Known as the <strong>"Powerhouse of the Cell"</strong>. Site of oxidation of food to produce energy stored as ATP (Adenosine Triphosphate).</p>
+                        <span class="inline-block text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Semi-autonomous (Has DNA)</span>
+                    </div>
+
+                    <!-- Vacuole -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-box-archive"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Vacuole & Tonoplast</h4>
+                        <p class="text-xs text-slate-500 mb-2">Fluid-filled sac containing cell sap. Outer membrane is <strong>Tonoplast</strong>. Large & central in plant cells, small/scattered in animals.</p>
+                        <span class="inline-block text-[10px] font-bold text-cyan-800 bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">Stores Cell Sap & Nutrients</span>
+                    </div>
+
+                    <!-- Lysosomes -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-skull"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Lysosomes</h4>
+                        <p class="text-xs text-slate-500 mb-2">Known as <strong>"Suicidal Bags"</strong>. Contains over 60 hydrolytic enzymes. Digests cellular waste or self-digests damaged cells.</p>
+                        <span class="inline-block text-[10px] font-bold text-rose-800 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Mainly in Animal Cells</span>
+                    </div>
+
+                    <!-- Ribosomes -->
+                    <div class="organelle-card bg-white p-5 rounded-xl border border-slate-200 transition-all">
+                        <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg mb-3">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base mb-1">Ribosomes</h4>
+                        <p class="text-xs text-slate-500 mb-2">Known as <strong>"Protein Factories"</strong>. Composed of RNA & proteins. (70S in prokaryotes, 80S in eukaryotes).</p>
+                        <span class="inline-block text-[10px] font-bold text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">Site of Protein Synthesis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onion Peel Lab Interactive Step Simulation -->
+            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-6 text-white shadow-xl">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-teal-400">Activity 1 (Textbook Page 69)</span>
+                        <h3 class="text-2xl font-black text-white">Microscopic Onion Cell Experiment Lab</h3>
+                    </div>
+                    <span class="px-3 py-1 bg-teal-500/20 text-teal-300 text-xs font-bold rounded-full border border-teal-500/30">Practical Simulation</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <!-- Step 1 -->
+                    <button onclick="setLabStep(1)" id="lab-btn-1" class="p-4 rounded-xl bg-white/10 border border-white/20 text-left transition-all hover:bg-white/20 ring-2 ring-teal-400">
+                        <div class="text-teal-400 font-extrabold text-xs mb-1">STEP 01</div>
+                        <div class="font-bold text-sm">Peel Onion Skin</div>
+                        <div class="text-[11px] text-slate-300 mt-1">Use forceps to extract thin epidermal layer.</div>
+                    </button>
+                    <!-- Step 2 -->
+                    <button onclick="setLabStep(2)" id="lab-btn-2" class="p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/20">
+                        <div class="text-teal-400 font-extrabold text-xs mb-1">STEP 02</div>
+                        <div class="font-bold text-sm">Mounting on Slide</div>
+                        <div class="text-[11px] text-slate-300 mt-1">Lay thin skin flat on glass slide.</div>
+                    </button>
+                    <!-- Step 3 -->
+                    <button onclick="setLabStep(3)" id="lab-btn-3" class="p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/20">
+                        <div class="text-teal-400 font-extrabold text-xs mb-1">STEP 03</div>
+                        <div class="font-bold text-sm">Staining with Iodine</div>
+                        <div class="text-[11px] text-slate-300 mt-1">Add Iodine / Safranin stain & coverslip.</div>
+                    </button>
+                    <!-- Step 4 -->
+                    <button onclick="setLabStep(4)" id="lab-btn-4" class="p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/20">
+                        <div class="text-teal-400 font-extrabold text-xs mb-1">STEP 04</div>
+                        <div class="font-bold text-sm">Microscope View</div>
+                        <div class="text-[11px] text-slate-300 mt-1">Observe under compound microscope.</div>
+                    </button>
+                </div>
+
+                <div id="lab-display-box" class="bg-black/40 rounded-xl p-6 border border-white/10 flex flex-col md:flex-row items-center gap-6">
+                    <div id="lab-graphic" class="w-full md:w-1/2 h-48 bg-slate-900 rounded-lg flex items-center justify-center p-4 border border-slate-700">
+                        <i class="fa-solid fa-hand-holding-droplet text-6xl text-teal-400 animate-pulse"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 space-y-3">
+                        <h4 id="lab-step-title" class="text-lg font-bold text-teal-300">Step 1: Extracting Epidermal Peel</h4>
+                        <p id="lab-step-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Carefully cut an onion bulb and use clean forceps to peel the inner thin transparent membrane. Use a clean fine brush to handle the delicate membrane without tearing it.
+                        </p>
+                        <div class="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-amber-200 text-xs">
+                            <strong><i class="fa-solid fa-triangle-exclamation mr-1"></i> Precaution:</strong> Avoid trapping air bubbles under the cover slip during mounting!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tissue - Organ - System Hierarchy Overview -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                <h3 class="text-xl font-extrabold text-slate-900">
+                    <i class="fa-solid fa-sitemap text-blue-600 mr-2"></i>Biological Organization Hierarchy
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                        <div class="text-3xl font-black text-blue-600 mb-1">1. Cell</div>
+                        <p class="text-xs text-slate-600">Basic structural and functional unit (e.g., Nerve cell, Blood cell, Muscle cell).</p>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100">
+                        <div class="text-3xl font-black text-emerald-600 mb-1">2. Tissue</div>
+                        <p class="text-xs text-slate-600">Group of similar cells performing a specific task (e.g., Epithelial, Connective, Muscular).</p>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-100">
+                        <div class="text-3xl font-black text-amber-600 mb-1">3. Organ</div>
+                        <p class="text-xs text-slate-600">Group of tissues forming a functional organ (e.g., Heart, Lungs, Liver, Stomach, Brain).</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-xl border border-purple-100">
+                        <div class="text-3xl font-black text-purple-600 mb-1">4. System</div>
+                        <p class="text-xs text-slate-600">Organs working together as a body system (e.g., Digestive, Circulatory, Nervous system).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: EVALUATION TEST (30 MARKS) -->
+        <section id="section-eval" class="hidden space-y-8">
+            <!-- Test Header Banner -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="px-3 py-1 bg-amber-100 text-amber-800 font-bold text-xs rounded-full uppercase tracking-wide">Unit 3 Assessment</span>
+                    <h2 class="text-2xl font-black text-slate-900 mt-2">The Cell Comprehensive Evaluation</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">School: Century English Medium School | Teacher: Prakash Khadka</p>
+                </div>
+                <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div class="text-center px-3 border-r border-slate-200">
+                        <div class="text-xs text-slate-500 uppercase font-semibold">Full Marks</div>
+                        <div class="text-2xl font-black text-blue-900">30</div>
+                    </div>
+                    <div class="text-center px-3 border-r border-slate-200">
+                        <div class="text-xs text-slate-500 uppercase font-semibold">Pass Marks</div>
+                        <div class="text-2xl font-black text-emerald-600">20</div>
+                    </div>
+                    <div class="text-center px-3">
+                        <div class="text-xs text-slate-500 uppercase font-semibold">My Score</div>
+                        <div id="eval-score-display" class="text-2xl font-black text-amber-600">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Detail Entry -->
+            <div class="bg-blue-50/60 rounded-2xl p-6 border border-blue-200 space-y-3">
+                <h3 class="font-extrabold text-blue-950 text-base flex items-center gap-2">
+                    <i class="fa-solid fa-id-card text-blue-600"></i> Student Details (Required for Certificate Generation)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Student Full Name *</label>
+                        <input type="text" id="student-name-input" placeholder="e.g. Aayush Sharma" class="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Roll Number / ID *</label>
+                        <input type="text" id="student-roll-input" placeholder="e.g. 08" class="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Section</label>
+                        <input type="text" id="student-sec-input" placeholder="e.g. Grade 8 - A" value="Grade 8" class="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                </div>
+            </div>
+
+            <form id="quiz-form" onsubmit="evaluateQuiz(event)" class="space-y-8">
+                <!-- SECTION A: FILL IN THE BLANKS (5 MARKS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <h3 class="font-extrabold text-lg text-slate-900">
+                            Section A: Fill in the Blanks <span class="text-xs font-semibold text-slate-500">(5 Questions × 1 Mark = 5 Marks)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">5 Marks</span>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-800">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <label class="block font-semibold mb-2">1. The cell was discovered by <input type="text" id="fill-q1" class="border-b-2 border-slate-400 bg-white px-2 py-1 text-sm font-bold text-blue-700 rounded outline-none focus:border-blue-600 w-48 text-center" placeholder="Scientist name"> in 1665 AD.</label>
+                            <div id="feedback-fill-q1" class="text-xs font-bold hidden mt-1"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <label class="block font-semibold mb-2">2. The outermost membrane layer of a plant vacuole is called <input type="text" id="fill-q2" class="border-b-2 border-slate-400 bg-white px-2 py-1 text-sm font-bold text-blue-700 rounded outline-none focus:border-blue-600 w-44 text-center" placeholder="Membrane name">.</label>
+                            <div id="feedback-fill-q2" class="text-xs font-bold hidden mt-1"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <label class="block font-semibold mb-2">3. Mitochondria stores energy in the form of <input type="text" id="fill-q3" class="border-b-2 border-slate-400 bg-white px-2 py-1 text-sm font-bold text-blue-700 rounded outline-none focus:border-blue-600 w-40 text-center" placeholder="Energy currency (3 letters)">.</label>
+                            <div id="feedback-fill-q3" class="text-xs font-bold hidden mt-1"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <label class="block font-semibold mb-2">4. Ribosomes are also known as the <input type="text" id="fill-q4" class="border-b-2 border-slate-400 bg-white px-2 py-1 text-sm font-bold text-blue-700 rounded outline-none focus:border-blue-600 w-36 text-center" placeholder="Protein / Energy"> factory of the cell.</label>
+                            <div id="feedback-fill-q4" class="text-xs font-bold hidden mt-1"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <label class="block font-semibold mb-2">5. <input type="text" id="fill-q5" class="border-b-2 border-slate-400 bg-white px-2 py-1 text-sm font-bold text-blue-700 rounded outline-none focus:border-blue-600 w-44 text-center" placeholder="Organelle name"> are known as the suicidal bags of the cell.</label>
+                            <div id="feedback-fill-q5" class="text-xs font-bold hidden mt-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION B: MULTIPLE CHOICE QUESTIONS (5 MARKS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <h3 class="font-extrabold text-lg text-slate-900">
+                            Section B: Multiple Choice Questions (MCQ) <span class="text-xs font-semibold text-slate-500">(5 Questions × 1 Mark = 5 Marks)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">5 Marks</span>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-800">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-semibold mb-2">1. Which cell organelle is ABSENT in animal cells?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q1" value="Nucleus"> <span>A) Nucleus</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q1" value="Plastid"> <span>B) Plastid</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q1" value="Vacuole"> <span>C) Vacuole</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q1" value="Centrosome"> <span>D) Centrosome</span></label>
+                            </div>
+                            <div id="feedback-mcq-q1" class="text-xs font-bold hidden mt-2"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-semibold mb-2">2. Which plastid contains the green pigment chlorophyll required for photosynthesis?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q2" value="Chromoplast"> <span>A) Chromoplast</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q2" value="Leucoplast"> <span>B) Leucoplast</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q2" value="Chloroplast"> <span>C) Chloroplast</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q2" value="Tonoplast"> <span>D) Tonoplast</span></label>
+                            </div>
+                            <div id="feedback-mcq-q2" class="text-xs font-bold hidden mt-2"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-semibold mb-2">3. What is the approximate water content in the cytosol of cytoplasm?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q3" value="10-20%"> <span>A) 10 - 20%</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q3" value="40-50%"> <span>B) 40 - 50%</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q3" value="75-90%"> <span>C) 75 - 90%</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q3" value="95-100%"> <span>D) 95 - 100%</span></label>
+                            </div>
+                            <div id="feedback-mcq-q3" class="text-xs font-bold hidden mt-2"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-semibold mb-2">4. Which organelle serves as the main microtubule organizing center in animal cell division?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q4" value="Centrosome"> <span>A) Centrosome</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q4" value="Golgi body"> <span>B) Golgi body</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q4" value="Mitochondria"> <span>C) Mitochondria</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q4" value="Lysosome"> <span>D) Lysosome</span></label>
+                            </div>
+                            <div id="feedback-mcq-q4" class="text-xs font-bold hidden mt-2"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <p class="font-semibold mb-2">5. What is the largest organ of the human body?</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q5" value="Liver"> <span>A) Liver</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q5" value="Skin"> <span>B) Skin</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q5" value="Brain"> <span>C) Brain</span></label>
+                                <label class="flex items-center space-x-2 bg-white p-2.5 rounded-lg border hover:bg-blue-50 cursor-pointer"><input type="radio" name="mcq-q5" value="Heart"> <span>D) Heart</span></label>
+                            </div>
+                            <div id="feedback-mcq-q5" class="text-xs font-bold hidden mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION C: TRUE OR FALSE (5 MARKS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <h3 class="font-extrabold text-lg text-slate-900">
+                            Section C: True or False Statements <span class="text-xs font-semibold text-slate-500">(5 Questions × 1 Mark = 5 Marks)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">5 Marks</span>
+                    </div>
+
+                    <div class="space-y-3 text-sm text-slate-800">
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <span class="font-semibold">1. Prokaryotic cells possess a true nucleus surrounded by a well-defined nuclear membrane.</span>
+                            <div class="flex items-center space-x-3 text-xs font-bold">
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q1" value="True"> <span>True</span></label>
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q1" value="False"> <span>False</span></label>
+                            </div>
+                        </div>
+                        <div id="feedback-tf-q1" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <span class="font-semibold">2. Plant cells have a rigid cell wall made of cellulose, while animal cells completely lack cell walls.</span>
+                            <div class="flex items-center space-x-3 text-xs font-bold">
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q2" value="True"> <span>True</span></label>
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q2" value="False"> <span>False</span></label>
+                            </div>
+                        </div>
+                        <div id="feedback-tf-q2" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <span class="font-semibold">3. Rough Endoplasmic Reticulum (RER) has ribosomes attached to its surface for protein synthesis.</span>
+                            <div class="flex items-center space-x-3 text-xs font-bold">
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q3" value="True"> <span>True</span></label>
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q3" value="False"> <span>False</span></label>
+                            </div>
+                        </div>
+                        <div id="feedback-tf-q3" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <span class="font-semibold">4. Leucoplasts are colored plastids responsible for bright yellow, red, and orange colors in flowers and fruits.</span>
+                            <div class="flex items-center space-x-3 text-xs font-bold">
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q4" value="True"> <span>True</span></label>
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q4" value="False"> <span>False</span></label>
+                            </div>
+                        </div>
+                        <div id="feedback-tf-q4" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <span class="font-semibold">5. Human liver is considered the largest internal organ in the human body.</span>
+                            <div class="flex items-center space-x-3 text-xs font-bold">
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q5" value="True"> <span>True</span></label>
+                                <label class="flex items-center space-x-1 cursor-pointer"><input type="radio" name="tf-q5" value="False"> <span>False</span></label>
+                            </div>
+                        </div>
+                        <div id="feedback-tf-q5" class="text-xs font-bold hidden px-2"></div>
+                    </div>
+                </div>
+
+                <!-- SECTION D: MATCHING ITEMS (5 MARKS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <h3 class="font-extrabold text-lg text-slate-900">
+                            Section D: Matching Items <span class="text-xs font-semibold text-slate-500">(5 Items × 1 Mark = 5 Marks)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">5 Marks</span>
+                    </div>
+
+                    <p class="text-xs text-slate-500">Select the correct matching description from Column B for each item in Column A:</p>
+
+                    <div class="space-y-3 text-sm text-slate-800">
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="font-bold w-48 text-blue-900">1. Mitochondria</div>
+                            <select id="match-q1" class="w-full sm:w-auto bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-semibold outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">-- Choose Matching Option --</option>
+                                <option value="A">A) Kitchen of the plant cell</option>
+                                <option value="B">B) Powerhouse of the cell (ATP)</option>
+                                <option value="C">C) Suicidal bag of cell</option>
+                                <option value="D">D) Packaging and distribution center</option>
+                                <option value="E">E) Site of protein synthesis</option>
+                            </select>
+                        </div>
+                        <div id="feedback-match-q1" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="font-bold w-48 text-blue-900">2. Chloroplast</div>
+                            <select id="match-q2" class="w-full sm:w-auto bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-semibold outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">-- Choose Matching Option --</option>
+                                <option value="A">A) Kitchen of the plant cell</option>
+                                <option value="B">B) Powerhouse of the cell (ATP)</option>
+                                <option value="C">C) Suicidal bag of cell</option>
+                                <option value="D">D) Packaging and distribution center</option>
+                                <option value="E">E) Site of protein synthesis</option>
+                            </select>
+                        </div>
+                        <div id="feedback-match-q2" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="font-bold w-48 text-blue-900">3. Golgi Apparatus</div>
+                            <select id="match-q3" class="w-full sm:w-auto bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-semibold outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">-- Choose Matching Option --</option>
+                                <option value="A">A) Kitchen of the plant cell</option>
+                                <option value="B">B) Powerhouse of the cell (ATP)</option>
+                                <option value="C">C) Suicidal bag of cell</option>
+                                <option value="D">D) Packaging and distribution center</option>
+                                <option value="E">E) Site of protein synthesis</option>
+                            </select>
+                        </div>
+                        <div id="feedback-match-q3" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="font-bold w-48 text-blue-900">4. Lysosome</div>
+                            <select id="match-q4" class="w-full sm:w-auto bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-semibold outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">-- Choose Matching Option --</option>
+                                <option value="A">A) Kitchen of the plant cell</option>
+                                <option value="B">B) Powerhouse of the cell (ATP)</option>
+                                <option value="C">C) Suicidal bag of cell</option>
+                                <option value="D">D) Packaging and distribution center</option>
+                                <option value="E">E) Site of protein synthesis</option>
+                            </select>
+                        </div>
+                        <div id="feedback-match-q4" class="text-xs font-bold hidden px-2"></div>
+
+                        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                            <div class="font-bold w-48 text-blue-900">5. Ribosome</div>
+                            <select id="match-q5" class="w-full sm:w-auto bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-semibold outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">-- Choose Matching Option --</option>
+                                <option value="A">A) Kitchen of the plant cell</option>
+                                <option value="B">B) Powerhouse of the cell (ATP)</option>
+                                <option value="C">C) Suicidal bag of cell</option>
+                                <option value="D">D) Packaging and distribution center</option>
+                                <option value="E">E) Site of protein synthesis</option>
+                            </select>
+                        </div>
+                        <div id="feedback-match-q5" class="text-xs font-bold hidden px-2"></div>
+                    </div>
+                </div>
+
+                <!-- SECTION E: SHORT ANSWER QUESTIONS (10 MARKS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                        <h3 class="font-extrabold text-lg text-slate-900">
+                            Section E: Short Answer Questions <span class="text-xs font-semibold text-slate-500">(5 Questions × 2 Marks = 10 Marks)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded">10 Marks</span>
+                    </div>
+
+                    <div class="space-y-6 text-sm">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                            <label class="block font-bold text-slate-900">Q1. What is a cell? Why is it called the building block of life? (2 Marks)</label>
+                            <textarea id="short-q1" rows="2" class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+                            <div id="model-q1" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
+                                <strong>Model Answer Key (2 Marks):</strong> Cell is the basic, structural, and functional unit of life. It is called the building block of life because all living organisms (plants & animals) are made up of cells.
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                            <label class="block font-bold text-slate-900">Q2. Write any two differences between a prokaryotic cell and a eukaryotic cell. (2 Marks)</label>
+                            <textarea id="short-q2" rows="2" class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+                            <div id="model-q2" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
+                                <strong>Model Answer Key (2 Marks):</strong> 1) Prokaryotic cells lack a true nucleus, whereas eukaryotic cells have a true nucleus surrounded by a nuclear membrane. 2) Prokaryotes lack membrane-bound organelles like mitochondria, whereas eukaryotes have them.
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                            <label class="block font-bold text-slate-900">Q3. Why are lysosomes called the "suicidal bags" of a cell? (2 Marks)</label>
+                            <textarea id="short-q3" rows="2" class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+                            <div id="model-q3" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
+                                <strong>Model Answer Key (2 Marks):</strong> Lysosomes contain strong hydrolytic (digestive) enzymes. If a lysosome bursts inside the cell, its digestive enzymes start digesting its own cell, leading to cellular destruction. Hence, they are called suicidal bags.
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                            <label class="block font-bold text-slate-900">Q4. State two major differences between a plant cell and an animal cell. (2 Marks)</label>
+                            <textarea id="short-q4" rows="2" class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+                            <div id="model-q4" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
+                                <strong>Model Answer Key (2 Marks):</strong> 1) Plant cells have cell walls and plastids, which are absent in animal cells. 2) Plant cells have a single large central vacuole, whereas animal cells have multiple small scattered vacuoles.
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                            <label class="block font-bold text-slate-900">Q5. Define an organ in the human body and name any two examples. (2 Marks)</label>
+                            <textarea id="short-q5" rows="2" class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+                            <div id="model-q5" class="hidden p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900">
+                                <strong>Model Answer Key (2 Marks):</strong> An organ is a group of different tissues performing a specific function in the body. Examples: Heart, Lungs, Kidneys, Brain, Liver.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center pt-4">
+                    <button type="submit" class="px-8 py-4 bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white font-extrabold text-base rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Submit Evaluation Test & Calculate Marks
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- TAB 3: CERTIFICATE GENERATION SECTION -->
+        <section id="section-cert" class="hidden space-y-6">
+            <!-- Unlock status bar -->
+            <div id="cert-status-banner" class="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center space-y-2">
+                <i class="fa-solid fa-lock text-3xl text-amber-500"></i>
+                <h3 class="text-lg font-bold text-amber-900">Certificate Locked</h3>
+                <p class="text-xs sm:text-sm text-amber-700 max-w-lg mx-auto">
+                    Please complete the Evaluation Test in Tab 2 and score at least <strong>20 out of 30 marks</strong> (Pass Mark) to generate your official certificate signed by Subject Teacher Prakash Khadka.
+                </p>
+                <button onclick="switchTab('eval')" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-lg mt-2 transition-all">
+                    Go to Evaluation Test
+                </button>
+            </div>
+
+            <!-- Certificate Printable Container -->
+            <div id="certificate-print-area" class="hidden bg-white rounded-2xl p-4 sm:p-10 shadow-2xl border-4 border-slate-900 max-w-4xl mx-auto relative overflow-hidden">
+                <div class="cert-border p-6 sm:p-10 relative bg-gradient-to-br from-amber-50/20 via-white to-blue-50/20 rounded-lg">
+
+                    <!-- Watermark Logo -->
+                    <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+                        <i class="fa-solid fa-microscope text-[320px]"></i>
+                    </div>
+
+                    <!-- Certificate Header -->
+                    <div class="text-center space-y-3 relative z-10">
+                        <!-- Custom Provided School Logo in Certificate -->
+                        <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-950 to-indigo-900 rounded-2xl flex items-center justify-center p-2 shadow-lg border-2 border-amber-400">
+                            <svg viewBox="0 0 100 100" class="w-full h-full filter drop-shadow-[0_0_12px_rgba(20,184,166,0.6)]">
+                                <polygon points="15,20 85,20 50,44" fill="#0d9488" opacity="0.9" />
+                                <polygon points="15,80 85,80 50,56" fill="#0284c7" opacity="0.9" />
+                                <g transform="translate(42, 38) rotate(-25)">
+                                    <rect x="0" y="0" width="8" height="22" fill="#fbbf24" rx="1"/>
+                                    <polygon points="0,22 8,22 4,29" fill="#f43f5e"/>
+                                    <rect x="0" y="-3" width="8" height="3" fill="#cbd5e1"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <h2 class="text-2xl sm:text-3xl font-black uppercase text-blue-950 tracking-wider font-serif">Century English Medium School</h2>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-widest">Academic Excellence</p>
+
+                        <div class="py-2">
+                            <span class="inline-block border-b-2 border-t-2 border-amber-500 py-1 px-8 text-xl sm:text-2xl font-black uppercase text-amber-800 font-serif tracking-widest">
+                                Certificate of Merit
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Content Text -->
+                    <div class="my-8 text-center space-y-4 relative z-10">
+                        <p class="text-xs sm:text-sm text-slate-600 italic">This is to certify that</p>
+                        <h3 id="cert-student-name" class="text-2xl sm:text-4xl font-extrabold text-blue-900 border-b-2 border-slate-300 inline-block px-6 pb-1 font-serif">
+                            Student Name
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-2xl mx-auto pt-2">
+                            has successfully completed the interactive study and evaluation test on <strong>Unit 3: The Cell (Living Beings & Their Structures)</strong> for Grade 8 Science.
+                        </p>
+
+                        <!-- Score Badge -->
+                        <div class="inline-flex items-center gap-6 bg-slate-50 border border-slate-200 rounded-xl px-6 py-3 my-3">
+                            <div class="text-center">
+                                <span class="text-[10px] uppercase text-slate-500 block font-bold">Total Marks</span>
+                                <span class="text-lg font-black text-slate-800">30 / 30</span>
+                            </div>
+                            <div class="h-8 w-px bg-slate-300"></div>
+                            <div class="text-center">
+                                <span class="text-[10px] uppercase text-slate-500 block font-bold">Marks Scored</span>
+                                <span id="cert-marks-scored" class="text-lg font-black text-emerald-600">26 / 30</span>
+                            </div>
+                            <div class="h-8 w-px bg-slate-300"></div>
+                            <div class="text-center">
+                                <span class="text-[10px] uppercase text-slate-500 block font-bold">Grade</span>
+                                <span id="cert-grade" class="text-lg font-black text-amber-600">A+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signatures & Seal Section -->
+                    <div class="mt-12 pt-6 border-t border-slate-200 grid grid-cols-2 gap-8 items-end relative z-10">
+                        <!-- Left Signature: Subject Teacher Prakash Khadka -->
+                        <div class="text-center">
+                            <div class="h-12 flex items-center justify-center">
+                                <span class="font-handwriting text-3xl font-bold text-blue-900 tracking-wider -rotate-3 select-none">
+                                    Prakash Khadka
+                                </span>
+                            </div>
+                            <div class="w-48 h-0.5 bg-slate-400 mx-auto mt-1 mb-1"></div>
+                            <p class="text-xs font-black text-slate-900">Prakash Khadka</p>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Subject Teacher (Science)</p>
+                        </div>
+
+                        <!-- Right Signature: Principal -->
+                        <div class="text-center relative">
+                            <div class="absolute -top-10 left-1/2 -translate-x-1/2 opacity-25 pointer-events-none">
+                                <div class="w-20 h-20 rounded-full border-4 border-dashed border-blue-900 flex items-center justify-center p-1">
+                                    <div class="w-full h-full rounded-full border-2 border-blue-900 flex items-center justify-center text-[8px] font-bold text-blue-900 text-center">
+                                        CENTURY SCHOOL<br>SEAL
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-12 flex items-center justify-center">
+                                <span class="font-handwriting text-3xl font-bold text-slate-800 tracking-wider rotate-2 select-none">
+                                    Principal
+                                </span>
+                            </div>
+                            <div class="w-48 h-0.5 bg-slate-400 mx-auto mt-1 mb-1"></div>
+                            <p class="text-xs font-black text-slate-900">School Principal</p>
+                            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Century English Medium School</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Issue Date & Verification Code -->
+                    <div class="mt-8 pt-3 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                        <span>Date Issued: <strong id="cert-date" class="text-slate-600">2026-08-20</strong></span>
+                        <span>Verification ID: <strong id="cert-id" class="text-slate-600">CEMS-CELL-8842</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Print & Action Controls -->
+            <div id="cert-action-btns" class="hidden text-center space-x-4 pt-4 no-print">
+                <button onclick="window.print()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-xl shadow-md transition-all">
+                    <i class="fa-solid fa-print mr-2"></i> Print / Save as PDF Certificate
+                </button>
+                <button onclick="switchTab('study')" class="px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-sm rounded-xl transition-all">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Lesson Study
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 mt-12 no-print border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-slate-200">Century English Medium School</p>
+                <p class="text-slate-500">Grade 8 Science & Technology • Unit 3: Living Beings & Their Structures</p>
+            </div>
+            <div>
+                <p>Designed for Subject Teacher: <strong class="text-slate-300">Prakash Khadka</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global State
+        let currentCellType = 'plant';
+        let currentLabStep = 1;
+        let lastScore = 0;
+
+        // Organelle Details Data
+        const organelleData = {
+            nucleus: {
+                title: "Nucleus",
+                location: "Plant & Animal Cells",
+                desc: "Double membrane-bound organelle containing genetic materials (DNA/RNA). Surrounding layer is the nuclear membrane with nuclear pores.",
+                facts: [
+                    "Discovered by Robert Brown, controls all vital cellular activities.",
+                    "Contains nucleolus for RNA and ribosome synthesis.",
+                    "Contains chromatin threads/chromosomes for transfer of hereditary traits."
+                ]
+            },
+            mitochondria: {
+                title: "Mitochondria",
+                location: "Eukaryotic Cells (Plant & Animal)",
+                desc: "Rod-shaped double membrane organelle. Known as the 'Powerhouse of the Cell' or energy currency generator.",
+                facts: [
+                    "Site of oxidation (burning) of food during cellular respiration.",
+                    "Stores generated energy in the form of ATP (Adenosine Triphosphate).",
+                    "Contains its own mitochondrial DNA (semi-autonomous organelle)."
+                ]
+            },
+            chloroplast: {
+                title: "Chloroplast (Plastid)",
+                location: "Plant Cells only",
+                desc: "Green pigment-containing plastid known as the 'Kitchen of the Plant Cell'. Contains chlorophyll in thylakoids.",
+                facts: [
+                    "Manufactures glucose food via photosynthesis using sun energy, water & CO2.",
+                    "Contains stroma, thylakoids, and envelope.",
+                    "Contains its own DNA (semi-autonomous organelle)."
+                ]
+            },
+            vacuole: {
+                title: "Vacuole & Tonoplast",
+                location: "Large in Plants, Small/Scattered in Animals",
+                desc: "Fluid-filled sac surrounded by a membrane called Tonoplast. Holds cell sap, water, minerals, and nutrients.",
+                facts: [
+                    "Provides turgidity and mechanical rigidity to plant cells.",
+                    "Absent in bacterial cells.",
+                    "Stores waste products before excretion."
+                ]
+            },
+            cellwall: {
+                title: "Cell Wall",
+                location: "Plant Cells, Fungi, Bacteria (Absent in Animals)",
+                desc: "Thick, strong, rigid supportive outer non-living layer made of cellulose in plants, chitin in fungi, peptidoglycan in bacteria.",
+                facts: [
+                    "Protects the cell mechanically and maintains fixed shape.",
+                    "Exhibits filtration mechanism for entry/exit of substances."
+                ]
+            },
+            lysosomes: {
+                title: "Lysosomes",
+                location: "Mainly Animal Cells",
+                desc: "Single layered membrane-bound organelle containing over 60 hydrolytic digestive enzymes. Known as 'Suicidal Bags'.",
+                facts: [
+                    "Digests proteins, lipids, fats, and foreign particles.",
+                    "Self-digests damaged cells if the sac bursts.",
+                    "Acts as the waste disposal system of the cell."
+                ]
+            },
+            ribosomes: {
+                title: "Ribosomes",
+                location: "Present in ALL Cells",
+                desc: "Tiny granulate structures known as 'Protein Factories'. Composed of RNA and proteins (70S in prokaryotes, 80S in eukaryotes).",
+                facts: [
+                    "Site of protein synthesis in cytoplasm or attached to Rough ER.",
+                    "Composed of small (30S/40S) and large (50S/60S) subunits."
+                ]
+            }
+        };
+
+        // Navigation Tab Switcher
+        function switchTab(tab) {
+            document.getElementById('section-study').classList.add('hidden');
+            document.getElementById('section-eval').classList.add('hidden');
+            document.getElementById('section-cert').classList.add('hidden');
+
+            document.getElementById('tab-study').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
+            document.getElementById('tab-eval').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
+            document.getElementById('tab-cert').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
+
+            if (tab === 'study') {
+                document.getElementById('section-study').classList.remove('hidden');
+                document.getElementById('tab-study').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 bg-white text-blue-900 shadow-sm";
+            } else if (tab === 'eval') {
+                document.getElementById('section-eval').classList.remove('hidden');
+                document.getElementById('tab-eval').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 bg-white text-blue-900 shadow-sm";
+            } else if (tab === 'cert') {
+                document.getElementById('section-cert').classList.remove('hidden');
+                document.getElementById('tab-cert').className = "px-4 py-2 text-sm font-semibold rounded-lg transition-all flex items-center gap-2 bg-white text-blue-900 shadow-sm";
+            }
+        }
+
+        // Cell Simulator Rendering
+        function toggleCellView(type) {
+            currentCellType = type;
+            const svgBox = document.getElementById('cell-diagram-svg');
+
+            document.getElementById('btn-cell-plant').className = "px-3 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900";
+            document.getElementById('btn-cell-animal').className = "px-3 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900";
+            document.getElementById('btn-cell-pro').className = "px-3 py-1.5 text-xs font-bold rounded-lg text-slate-600 hover:text-slate-900";
+
+            if (type === 'plant') {
+                document.getElementById('btn-cell-plant').className = "px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow-sm";
+                svgBox.innerHTML = `
+                    <svg viewBox="0 0 300 240" class="w-full h-full">
+                        <polygon points="150,10 270,50 270,190 150,230 30,190 30,50" fill="#065f46" stroke="#10b981" stroke-width="6" class="cursor-pointer" onclick="spotlight('cellwall')"/>
+                        <polygon points="150,20 260,57 260,183 150,220 40,183 40,57" fill="#022c22" stroke="#34d399" stroke-width="2"/>
+                        <ellipse cx="140" cy="130" rx="55" ry="40" fill="#0284c7" opacity="0.7" stroke="#38bdf8" stroke-width="2" class="cursor-pointer" onclick="spotlight('vacuole')"/>
+                        <text x="120" y="135" fill="#ffffff" font-size="10" font-weight="bold">Vacuole</text>
+                        <circle cx="210" cy="90" r="28" fill="#4338ca" stroke="#818cf8" stroke-width="3" class="cursor-pointer" onclick="spotlight('nucleus')"/>
+                        <circle cx="210" cy="90" r="10" fill="#1e1b4b"/>
+                        <ellipse cx="80" cy="80" rx="18" ry="10" fill="#15803d" stroke="#4ade80" stroke-width="2" class="cursor-pointer" onclick="spotlight('chloroplast')"/>
+                        <ellipse cx="90" cy="170" rx="18" ry="10" fill="#15803d" stroke="#4ade80" stroke-width="2" class="cursor-pointer" onclick="spotlight('chloroplast')"/>
+                        <ellipse cx="210" cy="170" rx="16" ry="9" fill="#b45309" stroke="#fbbf24" stroke-width="2" class="cursor-pointer" onclick="spotlight('mitochondria')"/>
+                    </svg>
+                `;
+                spotlight('nucleus');
+            } else if (type === 'animal') {
+                document.getElementById('btn-cell-animal').className = "px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow-sm";
+                svgBox.innerHTML = `
+                    <svg viewBox="0 0 300 240" class="w-full h-full">
+                        <path d="M50 120 C 50 40, 250 40, 250 120 C 250 200, 50 200, 50 120 Z" fill="#4c0519" stroke="#f43f5e" stroke-width="4"/>
+                        <circle cx="150" cy="120" r="34" fill="#4338ca" stroke="#818cf8" stroke-width="3" class="cursor-pointer" onclick="spotlight('nucleus')"/>
+                        <circle cx="150" cy="120" r="12" fill="#1e1b4b"/>
+                        <circle cx="90" cy="90" r="10" fill="#0284c7" opacity="0.8" class="cursor-pointer" onclick="spotlight('vacuole')"/>
+                        <circle cx="210" cy="150" r="12" fill="#0284c7" opacity="0.8" class="cursor-pointer" onclick="spotlight('vacuole')"/>
+                        <ellipse cx="90" cy="150" rx="18" ry="10" fill="#b45309" stroke="#fbbf24" stroke-width="2" class="cursor-pointer" onclick="spotlight('mitochondria')"/>
+                        <ellipse cx="200" cy="85" rx="18" ry="10" fill="#b45309" stroke="#fbbf24" stroke-width="2" class="cursor-pointer" onclick="spotlight('mitochondria')"/>
+                        <circle cx="130" cy="65" r="8" fill="#e11d48" class="cursor-pointer" onclick="spotlight('lysosomes')"/>
+                        <circle cx="170" cy="175" r="8" fill="#e11d48" class="cursor-pointer" onclick="spotlight('lysosomes')"/>
+                    </svg>
+                `;
+                spotlight('nucleus');
+            } else if (type === 'prokaryote') {
+                document.getElementById('btn-cell-pro').className = "px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white shadow-sm";
+                svgBox.innerHTML = `
+                    <svg viewBox="0 0 300 240" class="w-full h-full">
+                        <rect x="50" y="70" width="180" height="100" rx="50" fill="#1e293b" stroke="#0ea5e9" stroke-width="4"/>
+                        <path d="M50 120 C 30 140, 20 100, 5 120" fill="none" stroke="#eab308" stroke-width="3"/>
+                        <path d="M110 110 Q 140 90, 160 120 T 130 135" fill="none" stroke="#ec4899" stroke-width="4" stroke-dasharray="3,3" class="cursor-pointer" onclick="spotlight('nucleus')"/>
+                        <text x="105" y="150" fill="#ec4899" font-size="9" font-weight="bold">Nucleoid (Unbound DNA)</text>
+                        <circle cx="80" cy="100" r="3" fill="#f87171" class="cursor-pointer" onclick="spotlight('ribosomes')"/>
+                        <circle cx="90" cy="130" r="3" fill="#f87171" class="cursor-pointer" onclick="spotlight('ribosomes')"/>
+                        <circle cx="180" cy="100" r="3" fill="#f87171" class="cursor-pointer" onclick="spotlight('ribosomes')"/>
+                        <circle cx="190" cy="130" r="3" fill="#f87171" class="cursor-pointer" onclick="spotlight('ribosomes')"/>
+                    </svg>
+                `;
+                spotlight('nucleus');
+            }
+            renderPills();
+        }
+
+        // Render Quick Selection Pills
+        function renderPills() {
+            const container = document.getElementById('organelle-pills');
+            const list = ['nucleus', 'mitochondria', 'vacuole', 'ribosomes'];
+            if (currentCellType === 'plant') list.push('cellwall', 'chloroplast');
+            if (currentCellType === 'animal') list.push('lysosomes');
+
+            container.innerHTML = list.map(item => `
+                <button onclick="spotlight('${item}')" class="px-2.5 py-1 bg-white hover:bg-blue-50 text-slate-700 font-bold text-[11px] rounded border border-slate-300 shadow-sm transition-all">
+                    ${organelleData[item].title}
+                </button>
+            `).join('');
+        }
+
+        // Spotlight Organelle Function
+        function spotlight(key) {
+            const data = organelleData[key] || organelleData['nucleus'];
+            document.getElementById('spotlight-title').innerText = data.title;
+            document.getElementById('spotlight-location').innerText = data.location;
+            document.getElementById('spotlight-desc').innerText = data.desc;
+            document.getElementById('spotlight-facts').innerHTML = data.facts.map(f => `<li>${f}</li>`).join('');
+        }
+
+        // Onion Peel Lab Simulation Steps
+        function setLabStep(step) {
+            currentLabStep = step;
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`lab-btn-${i}`).className = "p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/20";
+            }
+            document.getElementById(`lab-btn-${step}`).className = "p-4 rounded-xl bg-white/10 border border-white/20 text-left transition-all hover:bg-white/20 ring-2 ring-teal-400";
+
+            const graphic = document.getElementById('lab-graphic');
+            const title = document.getElementById('lab-step-title');
+            const desc = document.getElementById('lab-step-desc');
+
+            if (step === 1) {
+                graphic.innerHTML = `<i class="fa-solid fa-hand-holding-droplet text-6xl text-teal-400 animate-pulse"></i>`;
+                title.innerText = "Step 1: Extracting Epidermal Peel";
+                desc.innerText = "Carefully cut an onion bulb and use clean forceps to peel the inner thin transparent membrane. Use a clean fine brush to handle the delicate membrane without tearing it.";
+            } else if (step === 2) {
+                graphic.innerHTML = `<i class="fa-solid fa-file-lines text-6xl text-amber-400"></i>`;
+                title.innerText = "Step 2: Laying Membrane on Glass Slide";
+                desc.innerText = "Place the extracted thin onion skin smoothly on the center of a glass slide. Ensure the peel is completely flattened and not folded.";
+            } else if (step === 3) {
+                graphic.innerHTML = `<i class="fa-solid fa-vial-circle-check text-6xl text-rose-400 animate-bounce"></i>`;
+                title.innerText = "Step 3: Staining with Iodine / Safranin";
+                desc.innerText = "Add 1-2 drops of Iodine solution or Safranin stain over the onion peel. Place a cover slip gently using a needle to avoid trapping air bubbles.";
+            } else if (step === 4) {
+                graphic.innerHTML = `<i class="fa-solid fa-microscope text-6xl text-emerald-400"></i>`;
+                title.innerText = "Step 4: Microscopic Observation";
+                desc.innerText = "Observe the slide under low and high powers of a compound microscope. Distinct rectangular cell walls, cytoplasm, and central nucleus become clearly visible!";
+            }
+        }
+
+        // Evaluation & Auto-Grading Logic
+        function evaluateQuiz(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('student-name-input').value.trim();
+            if (!name) {
+                alert("Please enter your Full Name before submitting the evaluation test.");
+                document.getElementById('student-name-input').focus();
+                return;
+            }
+
+            let score = 0;
+
+            // SECTION A: Fill in the Blanks (5 Marks)
+            const f1 = document.getElementById('fill-q1').value.trim().toLowerCase();
+            if (f1.includes("robert hooke") || f1.includes("hooke")) {
+                score += 1;
+                showFeedback('feedback-fill-q1', true, "Correct! (1/1) Discovered by Robert Hooke in 1665 AD.");
+            } else {
+                showFeedback('feedback-fill-q1', false, "Incorrect (0/1). Correct answer: Robert Hooke");
+            }
+
+            const f2 = document.getElementById('fill-q2').value.trim().toLowerCase();
+            if (f2.includes("tonoplast")) {
+                score += 1;
+                showFeedback('feedback-fill-q2', true, "Correct! (1/1) Tonoplast is the vacuole membrane.");
+            } else {
+                showFeedback('feedback-fill-q2', false, "Incorrect (0/1). Correct answer: Tonoplast");
+            }
+
+            const f3 = document.getElementById('fill-q3').value.trim().toLowerCase();
+            if (f3.includes("atp") || f3.includes("adenosine triphosphate")) {
+                score += 1;
+                showFeedback('feedback-fill-q3', true, "Correct! (1/1) ATP (Adenosine Triphosphate).");
+            } else {
+                showFeedback('feedback-fill-q3', false, "Incorrect (0/1). Correct answer: ATP");
+            }
+
+            const f4 = document.getElementById('fill-q4').value.trim().toLowerCase();
+            if (f4.includes("protein")) {
+                score += 1;
+                showFeedback('feedback-fill-q4', true, "Correct! (1/1) Ribosomes are protein factories.");
+            } else {
+                showFeedback('feedback-fill-q4', false, "Incorrect (0/1). Correct answer: Protein");
+            }
+
+            const f5 = document.getElementById('fill-q5').value.trim().toLowerCase();
+            if (f5.includes("lysosome") || f5.includes("lysosomes")) {
+                score += 1;
+                showFeedback('feedback-fill-q5', true, "Correct! (1/1) Lysosomes are suicidal bags.");
+            } else {
+                showFeedback('feedback-fill-q5', false, "Incorrect (0/1). Correct answer: Lysosomes");
+            }
+
+            // SECTION B: MCQ (5 Marks)
+            const mcqAns = { q1: "Plastid", q2: "Chloroplast", q3: "75-90%", q4: "Centrosome", q5: "Skin" };
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="mcq-q${i}"]:checked`);
+                if (selected && selected.value === mcqAns[`q${i}`]) {
+                    score += 1;
+                    showFeedback(`feedback-mcq-q${i}`, true, `Correct! (1/1) Answer: ${mcqAns['q' + i]}`);
+                } else {
+                    showFeedback(`feedback-mcq-q${i}`, false, `Incorrect (0/1). Correct Answer: ${mcqAns['q' + i]}`);
+                }
+            }
+
+            // SECTION C: True / False (5 Marks)
+            const tfAns = { q1: "False", q2: "True", q3: "True", q4: "False", q5: "True" };
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="tf-q${i}"]:checked`);
+                if (selected && selected.value === tfAns[`q${i}`]) {
+                    score += 1;
+                    showFeedback(`feedback-tf-q${i}`, true, `Correct! (1/1) ${tfAns['q' + i]}`);
+                } else {
+                    showFeedback(`feedback-tf-q${i}`, false, `Incorrect (0/1). Statement is ${tfAns['q' + i]}`);
+                }
+            }
+
+            // SECTION D: Matching Items (5 Marks)
+            const matchAns = { q1: "B", q2: "A", q3: "D", q4: "C", q5: "E" };
+            for (let i = 1; i <= 5; i++) {
+                const val = document.getElementById(`match-q${i}`).value;
+                if (val === matchAns[`q${i}`]) {
+                    score += 1;
+                    showFeedback(`feedback-match-q${i}`, true, "Correct Match! (1/1)");
+                } else {
+                    showFeedback(`feedback-match-q${i}`, false, "Incorrect Match (0/1)");
+                }
+            }
+
+            // SECTION E: Short Answer Questions (10 Marks)
+            const shortRubrics = [
+                { id: 'q1', keys: ['basic', 'unit', 'life', 'building', 'block', 'structural', 'functional'] },
+                { id: 'q2', keys: ['nucleus', 'membrane', 'bound', 'prokaryote', 'eukaryote', 'mitochondria'] },
+                { id: 'q3', keys: ['enzyme', 'digest', 'hydrolytic', 'burst', 'suicidal', 'destroy'] },
+                { id: 'q4', keys: ['wall', 'plastid', 'vacuole', 'chloroplast', 'plant', 'animal'] },
+                { id: 'q5', keys: ['tissue', 'group', 'function', 'heart', 'lungs', 'kidney', 'brain', 'liver'] }
+            ];
+
+            shortRubrics.forEach((item) => {
+                const ans = document.getElementById(`short-${item.id}`).value.toLowerCase();
+                document.getElementById(`model-${item.id}`).classList.remove('hidden');
+
+                let matched = 0;
+                item.keys.forEach(k => { if (ans.includes(k)) matched++; });
+
+                if (matched >= 3 || ans.length > 35) {
+                    score += 2;
+                } else if (matched >= 1 || ans.length > 15) {
+                    score += 1;
+                }
+            });
+
+            lastScore = score;
+            document.getElementById('eval-score-display').innerText = `${score} / 30`;
+
+            if (score >= 20) {
+                unlockCertificate(name, score);
+            } else {
+                alert(`Evaluation complete! You scored ${score} out of 30 marks.\nPass mark is 20/30. Please review the lesson notes and try again to unlock your certificate.`);
+            }
+        }
+
+        // Helper feedback renderer
+        function showFeedback(elemId, isCorrect, msg) {
+            const el = document.getElementById(elemId);
+            el.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+            el.classList.add(isCorrect ? 'text-emerald-600' : 'text-rose-600');
+            el.innerText = msg;
+        }
+
+        // Unlock and Populate Certificate
+        function unlockCertificate(studentName, score) {
+            document.getElementById('cert-lock-icon').innerHTML = `<i class="fa-solid fa-check-circle text-emerald-500"></i>`;
+            document.getElementById('cert-status-banner').classList.add('hidden');
+            document.getElementById('certificate-print-area').classList.remove('hidden');
+            document.getElementById('cert-action-btns').classList.remove('hidden');
+
+            document.getElementById('cert-student-name').innerText = studentName;
+            document.getElementById('cert-marks-scored').innerText = `${score} / 30`;
+
+            let grade = 'A+';
+            if (score < 24) grade = 'A';
+            if (score < 20) grade = 'B+';
+            document.getElementById('cert-grade').innerText = grade;
+
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('cert-date').innerText = today;
+
+            switchTab('cert');
+        }
+
+        window.onload = function() {
+            toggleCellView('plant');
+            setLabStep(1);
+        };
+    </script>
 </body>
 </html>
